@@ -5,7 +5,8 @@ dotenv.config();
 interface Config {
     PORT: number,
     HOST: string,
-    MONGO_URI: string
+    MONGO_URI: string,
+    URL_CLIENT: string
 }
 
 const getValuesENV = (key: string, defaultValue: string) =>{
@@ -20,6 +21,7 @@ export const config: Config = {
     PORT: parseInt(process.env.PORT || '3001' , 10),
     HOST: getValuesENV('HOST', 'localhost'),
     MONGO_URI: getValuesENV('MONGO_URI', ''),
+    URL_CLIENT: getValuesENV('URL_CLIENT', 'urldefault.com')
 }
 
 if(!config.MONGO_URI){
