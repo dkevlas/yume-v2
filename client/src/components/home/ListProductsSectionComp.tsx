@@ -1,9 +1,9 @@
-import { useProductFilter } from "../../hooks/productFilterHook"
+import { useProductFilterRandom } from "../../hooks/productFilterRandomHook"
 
 export default function ListProductsSectionComp(){
-    const { productsRandoms } = useProductFilter()
+    const { productsRandoms } = useProductFilterRandom()
     const data: any[] = productsRandoms?.data
-    console.log(data) // voy a necesitar 8
+    console.log(data)
     return (
         <ul className="
             flex gap-4 flex-wrap justify-center py-4
