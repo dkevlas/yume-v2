@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import NotFound from "../pages/NotFound";
-import { ProductFilterRandomProvider } from "../context/api.ProductsRandomContext";
+import { ProductsRandomsProvider } from "../context/productsRandomsProvider";
 
 export default function HomeRoutes(){
     return (
-        <ProductFilterRandomProvider>
+        <ProductsRandomsProvider>
             <Routes>
                 <Route path="" element={<HomePage />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
-        </ProductFilterRandomProvider>
+        </ProductsRandomsProvider>
     )
 }
