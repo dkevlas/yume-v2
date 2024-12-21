@@ -9,4 +9,23 @@
     .dark body{
         @apply bg-yume-dark text-yume-light 
     }
+    ::-webkit-scrollbar-thumb{
+        @apply bg-yume-light dark:bg-yume-dark border
+    }
+    ::-webkit-scrollbar-track{
+        @apply bg-yume-neutral-muted dark:bg-yume-deep-muted
+    }
 }
+
+@layer components{
+    .mask-gradient {
+        mask-image: linear-gradient(black 80%, transparent);
+        -webkit-mask-image: linear-gradient(black 80%, transparent);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
