@@ -10,18 +10,27 @@ export default function ToggleTheme(){
     const [ showIcon, setShowIcon ] = useState<boolean>()
     useEffect(()=>{
         if(!theme){
-            isTheme ? ChangeTheme('dark') : ChangeTheme('light')
+            if(isTheme){
+                ChangeTheme('dark')
+            } else{
+                ChangeTheme('light')
+            }
         }
-    }, [])
+    })
     useEffect(()=>{
         if(theme){
             ChangeTheme(theme)
         }
         const htmlElement = document.documentElement;
-        htmlElement.classList.contains('dark') ? setShowIcon(true) : setShowIcon(false)
+        if(htmlElement.classList.contains('dark')){
+            setShowIcon(true)
+        } else{
+            setShowIcon(false)
+        }
+        
     }, [theme])
     return (
-        <div className="flex relative p-1 w-full aspect-square">
+        <div className="flex relative w-full aspect-square">
             <div
                 className={`
                     ${showIcon ? 'opacity-100 z-[1]' : 'opacity-0 z-[-1]'}

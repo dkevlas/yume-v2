@@ -22,7 +22,7 @@ export default function ButtonFilterComp(){
             <select
                 id="category"
                 className="
-                    dark:bg-yume-secondary px-2 rounded-sm  font-semibold outline-none cursor-pointer
+                    dark:bg-yume-secondary bg-yume-primary px-2 rounded-sm  font-semibold outline-none cursor-pointer
                 "
                 value={optionCurrent || 'LISA'}
                 onChange={changeValueRoute}

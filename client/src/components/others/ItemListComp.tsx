@@ -1,22 +1,35 @@
 import { Link, NavLink } from "react-router-dom"
-import { ItemsMenu } from "../../templates/MenuTemplate"
 
-export function ItemListMobileComp(){
+interface ListMenu{
+    dataMenu: {
+        path: string,
+        name: string
+    }[]
+}
+
+export function ItemListMobileComp({
+    dataMenu
+}: ListMenu){
+
     return (
         <ul className="bg-blue-400">
-            { ItemsMenu.map( (item, index) => (
+            { dataMenu.map( (item, index) => (
                 <li key={index}>
-                    <Link to={item.path}>{item.link}</Link>
+                    <Link to={item.path}>
+                        {item.name}
+                    </Link>
                 </li>
             ))}
         </ul>
     )
 }
 
-export function ItemListDesktopComp(){
+export function ItemListDesktopComp({
+    dataMenu
+}: ListMenu){
     return (
         <ul className="gap-4 flex">
-            { ItemsMenu.map( (item, index) => (
+            { dataMenu.map( (item, index) => (
                 <li key={index}>
                     <NavLink 
                         className={({ isActive }) =>
@@ -25,7 +38,9 @@ export function ItemListDesktopComp(){
                             }`
                         }
                         to={item.path}
-                    >{item.link}</NavLink>
+                    >
+                        {item.name}
+                    </NavLink>
                 </li>
             ))}
         </ul>
