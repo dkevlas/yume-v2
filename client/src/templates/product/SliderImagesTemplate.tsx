@@ -49,6 +49,7 @@ export default function SliderImagesTemplate({
                 <ButtonEventComp
                     action={<IcoBackComp />}
                     event={()=> navigate(-1)}
+                    styles="absolute max-w top-2 left-2 bg-yume-neutral-bold rounded-md dark:bg-yume-deep"
                 />
             </section>
         )
