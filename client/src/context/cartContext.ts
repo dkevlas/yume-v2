@@ -1,7 +1,24 @@
-import { createContext } from "react";
+import React, { createContext } from "react";
 
-interface CartContext{
-    lisa?: string
+export type Action = {
+    type: "add" | "remove" | "clearCart",
+    value?: State
 }
 
-export const cartContext = createContext<CartContext | null>(null);
+export type State = {
+    id?: string,
+    title?: string,
+    price?: number
+    img?: string,
+    mount?: number,
+}
+
+interface CartContextValues{
+    state?: State[],
+    dispatch?: React.Dispatch<Action>,
+    checkProductInCart?: (id: string | undefined) => boolean | undefined
+    productIn?: boolean,
+    setProductIn?: (value: React.SetStateAction<boolean>) => void
+}
+
+export const cartContext = createContext<CartContextValues | null>(null);
