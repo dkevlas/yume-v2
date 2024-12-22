@@ -1,16 +1,16 @@
-import ButtonEventComp from "../others/ButtonEventComp"
-
 interface ContentCardProps {
     title?: string,
     price?: number,
     img?: string,
+    id?: string,
     activeEvent?: boolean,
     showImages?: ()=> void
 }
 
 export function ContentTextCardComp({
-    title, price
+    title, price, activeEvent
 }: ContentCardProps){
+
     return (
         <div className="text-center pt-2">
             <h4 className="text-yume-primary dark:text-yume-secondary font-semibold text-[clamp(0.75rem,_0.625rem_+_0.5vw,_1rem)]">
@@ -19,13 +19,13 @@ export function ContentTextCardComp({
             <span className="font-bold text-[clamp(0.938rem,_0.813rem_+_0.5vw,_1.188rem)]">
                 ${price?.toFixed(2)}
             </span>
-            <ButtonEventComp
-                styles="relative"
-                action={"AddToCart"}
-                event={()=>{
-                    console.log(title)
-                }}
-            />
+            <div
+                className={`
+                    ${activeEvent ? "opacity-100" : "opacity-100"}
+                    z-40 absolute right-2 top-2 transition-opacity
+                `}
+            >
+            </div>
         </div>
     )
 }
@@ -33,6 +33,7 @@ export function ContentTextCardComp({
 export function ContentIMGComp({
     img, title, activeEvent, showImages
 }: ContentCardProps){
+
     return (
         <div className="w-full aspect-square overflow-hidden" >
             <img

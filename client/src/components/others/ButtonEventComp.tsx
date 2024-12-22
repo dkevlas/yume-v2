@@ -14,7 +14,6 @@ export default function ButtonEventComp({
         <button
             type={ type || "button"}
             className={`
-                max-w absolute top-2 left-2 bg-yume-neutral-bold rounded-md dark:bg-yume-deep
                 ${styles}    
             `}
             onClick={event}
