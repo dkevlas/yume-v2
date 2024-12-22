@@ -1,9 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Suspense } from "react"
-import { HomePage, ProductPage, ShoppingPage } from "./routes/Routes"
+import { HomePage, PrivatePage, ProductPage, ShoppingPage } from "./routes/Routes"
 import MenuTemplate from "./templates/MenuTemplate"
 import FooterTempalte from "./templates/FooterTemplate"
-import { ProbandoSlider } from "./test/probandoSlider"
 
 function App() {
 
@@ -15,7 +14,7 @@ function App() {
           <Route path="/*" element={<HomePage />} />
           <Route path="/productos/*" element={<ShoppingPage />} />
           <Route path="/producto/*" element={<ProductPage />} />
-          <Route path="/contacto" element={<ProbandoSlider />} />
+          <Route path="/yume/private/*" element={<PrivatePage />} />
         </Routes>
         <FooterTempalte />
       </Suspense>

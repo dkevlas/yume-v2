@@ -3,6 +3,8 @@ import cors from "cors";
 import routerProducts from "./routes/product.routes";
 import routerProductsFilters from "./routes/productFilter.routes";
 import { config } from "./config";
+import { notFound } from "./middlewares/notFound";
+import { handlerError } from "./middlewares/handlerError";
 
 const app = express()
 
@@ -15,10 +17,7 @@ app.use(json())
 app.use('/api/products', routerProducts)
 app.use('/api/products-filters', routerProductsFilters)
 
-app.get('/api', (_req, res)=>{
-    res.json({
-        message: "Lisa te amo"
-    })
-})
+app.use(notFound)
+app.use(handlerError)
 
 export default app 

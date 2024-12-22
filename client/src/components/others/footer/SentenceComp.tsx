@@ -1,4 +1,4 @@
-import LogoComp from "../LogoComp"
+import LogoComp from "../../icos/LogoComp"
 
 export default function SentenceComp(){
     return (

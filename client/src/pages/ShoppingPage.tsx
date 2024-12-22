@@ -5,7 +5,6 @@ import NotFound from "./NotFound"
 
 export default function ShoppingPage(){
     const { loading, error, data } = useProductsByCategory()
-
     if(error){
         return <NotFound />
     }
@@ -16,9 +15,11 @@ export default function ShoppingPage(){
     }
     return (
         <div className="relative" >
-            { data?.success === false ? 
-            <NotFound />:
-            <ProductFilterTemplate />}
+            { 
+                data?.success === false ? 
+                <NotFound /> : 
+                <ProductFilterTemplate />
+            }
         </div>
     )
 }

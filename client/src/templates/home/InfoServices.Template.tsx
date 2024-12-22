@@ -1,6 +1,6 @@
 import BenefitComp from "../../components/home/BenefitComp";
 import ContainerComp from "../../components/home/ContainerComp";
-import { BenefitClient, BenefitSend, BenefitWarranty } from "../../components/others/IcosBenefitComp";
+import { BenefitClient, BenefitSend, BenefitWarranty } from "../../components/icos/IcosBenefitComp";
 import { BenefitProps } from "../../interfaces/home/BenefitPropsInterface";
 
 export default function InfoServicesTemplate(){

@@ -1,3 +1,5 @@
+import ButtonEventComp from "../others/ButtonEventComp"
+
 interface ContentCardProps {
     title?: string,
     price?: number,
@@ -17,6 +19,13 @@ export function ContentTextCardComp({
             <span className="font-bold text-[clamp(0.938rem,_0.813rem_+_0.5vw,_1.188rem)]">
                 ${price?.toFixed(2)}
             </span>
+            <ButtonEventComp
+                styles="relative"
+                action={"AddToCart"}
+                event={()=>{
+                    console.log(title)
+                }}
+            />
         </div>
     )
 }

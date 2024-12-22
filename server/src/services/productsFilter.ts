@@ -42,3 +42,19 @@ export const getProductsByCategory = async (req: Request<{}, {} ,{}, QueryParams
         data: products
     }
 };
+
+export const getProduct = async (req: Request): Promise<ServiceResponse> => {
+    const { productID } = req.params
+    const foundProduct = await Products.findOne({title: productID})
+    if(!foundProduct){
+        return {
+            success: false,
+            message: "No exist this product"
+        }
+    }
+    return {
+        success: true,
+        message: "It got the product",
+        data: [foundProduct]
+    }
+}

@@ -1,4 +1,4 @@
-import { IcoFacebook, IcoInstagram, IcoTiktok, IcoWhatsapp } from "../IcosMediaSocial";
+import { IcoFacebook, IcoInstagram, IcoTiktok, IcoWhatsapp } from "../../icos/IcosMediaSocial";
 
 export default function MediaSocialComp(){
     const icosMediasSocials = [

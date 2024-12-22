@@ -1,15 +1,15 @@
-import { useProductFilterRandom } from "../../hooks/productFilterRandomHook"
+import { useNavigate } from "react-router-dom"
+import { useProductsRandoms } from "../../hooks/productsRandomsHook"
 
 export default function ListProductsSectionComp(){
-    const { productsRandoms } = useProductFilterRandom()
-    const data: any[] = productsRandoms?.data
-    console.log(data)
+    const { productsRandoms } = useProductsRandoms()
+    const navigation = useNavigate()
     return (
         <ul className="
             flex gap-4 flex-wrap justify-center py-4
             md:grid md:grid-cols-4
         ">
-            { data && data.map((p, index) => (
+            { productsRandoms && productsRandoms.data?.map((p, index) => (
                 <li 
                     key={index}
                     className="
@@ -27,7 +27,10 @@ export default function ListProductsSectionComp(){
                         <img 
                             className="w-full h-full object-cover object-top hover:scale-110 transition-transform cursor-pointer"
                             src={p.thumbnail} 
-                            alt={`${p.title}`} 
+                            alt={p.title} 
+                            onClick={()=>{
+                                navigation(`/producto/${p.title}`)
+                            }}
                         />
                     </div>
                 </li>

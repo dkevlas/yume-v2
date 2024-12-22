@@ -1,0 +1,37 @@
+import { useEffect, useState } from "react"
+import { Params, useParams } from "react-router-dom"
+import { getProduct } from "../../services/ProductsService"
+import { ResponseData, TypeData } from "../../interfaces/responseData.Interface"
+
+import NotFound from "../../pages/NotFound"
+import SliderImagesTemplate from "./SliderImagesTemplate"
+
+export default function ProductDetailsTemplate(){
+    const { productID }:  Readonly<Params<string>> = useParams()
+    const [ product, setProduct ] = useState<ResponseData | undefined>(undefined)
+    const data: TypeData | undefined = product?.data?.[0]
+    useEffect(()=>{
+        if(productID){
+            getProduct(productID)
+                .then(data=>{
+                    setProduct(data)
+                })
+                .catch(err=>{
+                    console.log(err)
+                })
+        }
+    }, [productID])
+    return (
+        <div className="relative h-max min-h-[400px] py-8">
+            {
+                product?.success == false ? <NotFound /> :
+                <SliderImagesTemplate
+                    title={data?.title}
+                    description={data?.description}
+                    images={data?.images}
+                    lengthImages={data?.images.length || 0}
+                /> 
+            }
+        </div>
+    )
+}

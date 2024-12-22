@@ -17,7 +17,7 @@ export default function PaginationComp({
     }
     return (
         <div
-            className="flex gap-4 justify-center items-center py-2"
+            className="flex gap-4 justify-center items-center py-8 px-6 flex-wrap"
         >
             { Array.from({length: btns}, (_ , i)=>(
                 <div
@@ -28,7 +28,7 @@ export default function PaginationComp({
                         className={`
                             ${ Number(valuePage) == i + 1 ? 'dark:bg-yume-secondary-bold bg-yume-primary-bold' : 'bg-transparent' }
                             absolute w-full h-full outline outline-2 outline-yume-primary dark:outline-yume-secondary font-semibold rounded-full text-xs
-                            hover:dark:bg-yume-secondary-muted
+                            hover:dark:bg-yume-secondary-muted hover:bg-yume-primary-muted
                         `}
                         onClick={()=>clickPage(i+1)}
                     >
