@@ -3,21 +3,24 @@ import { Suspense } from "react"
 import { HomePage, PrivatePage, ProductPage, ShoppingPage } from "./routes/Routes"
 import MenuTemplate from "./templates/MenuTemplate"
 import FooterTempalte from "./templates/FooterTemplate"
+import { CartProvider } from "./context/cartProvider"
 
 function App() {
 
   return (
     <BrowserRouter> 
-      <Suspense fallback={<h1 className="text-4xl text-green-500">LISA BAILANDO</h1>}>
-        <MenuTemplate />
-        <Routes>
-          <Route path="/*" element={<HomePage />} />
-          <Route path="/productos/*" element={<ShoppingPage />} />
-          <Route path="/producto/*" element={<ProductPage />} />
-          <Route path="/yume/private/*" element={<PrivatePage />} />
-        </Routes>
-        <FooterTempalte />
-      </Suspense>
+      <CartProvider>
+        <Suspense fallback={<h1 className="text-4xl text-green-500">LISA BAILANDO</h1>}>
+            <MenuTemplate />
+              <Routes>
+                <Route path="/*" element={<HomePage />} />
+                <Route path="/productos/*" element={<ShoppingPage />} />
+                <Route path="/producto/*" element={<ProductPage />} />
+                <Route path="/yume/private/*" element={<PrivatePage />} />
+              </Routes>
+            <FooterTempalte />
+          </Suspense>
+      </CartProvider>
     </BrowserRouter>
   )
 }

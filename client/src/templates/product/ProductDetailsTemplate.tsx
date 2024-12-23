@@ -5,11 +5,13 @@ import { ResponseData, TypeData } from "../../interfaces/responseData.Interface"
 
 import NotFound from "../../pages/NotFound"
 import SliderImagesTemplate from "./SliderImagesTemplate"
+import { useCart } from "../../hooks/cartHook"
 
 export default function ProductDetailsTemplate(){
     const { productID }:  Readonly<Params<string>> = useParams()
     const [ product, setProduct ] = useState<ResponseData | undefined>(undefined)
     const data: TypeData | undefined = product?.data?.[0]
+    const { checkProductInCart } = useCart()
     useEffect(()=>{
         if(productID){
             getProduct(productID)
@@ -30,6 +32,10 @@ export default function ProductDetailsTemplate(){
                     description={data?.description}
                     images={data?.images}
                     lengthImages={data?.images.length || 0}
+                    id={data?._id}
+                    isCheck={  checkProductInCart?.(data?._id)  }
+                    price={data?.price}
+                    img={data?.thumbnail}
                 /> 
             }
         </div>

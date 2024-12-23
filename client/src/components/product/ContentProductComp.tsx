@@ -1,12 +1,17 @@
+import React from "react"
+
 interface ContentProductProps{
     title?: string,
     description?: string,
-    styles?: string
+    styles?: string,
+    children?: React.ReactNode,
+    price?: number
 }
 
 export default function ContentProductComp({
-    title, description, styles
+    title, description, styles, children, price
 }: ContentProductProps){
+
     return (
         <div className={`
             ${styles}
@@ -22,6 +27,10 @@ export default function ContentProductComp({
             >
                 {description}
             </p>
+            <div className="py-4 flex justify-between items-center md:w-[90%]">
+                <span className="font-semibold text-[clamp(1rem,_0.821rem_+_0.476vw,_1.25rem)]">💲{price?.toFixed(2)}</span>
+                { children }
+            </div>
         </div>
     )
 }

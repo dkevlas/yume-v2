@@ -46,33 +46,33 @@ export default function CardProductTemplate({
                     img={img}
                     activeEvent={activeElement}
                 />
-                    <ButtonEventComp
-                        action={`${itThisWithinCart ? "🗑": "🛒"}`}
-                        styles={`
-                            ${itThisWithinCart ? "bg-yume-secondary-muted" : "bg-yume-primary-muted"}
-                            text-2xl active:scale-95 p-1 rounded-full absolute top-2 right-2 shadow-sm shadow-yume-neutral-bold    
-                        `} 
-                        event={()=>{
-                            if(itThisWithinCart){
-                                dispatch?.({
-                                    type: "remove", 
-                                    value: {
-                                        id: id
-                                    }
-                                })
-                            }else{
-                                dispatch?.({
-                                    type: "add",
-                                    value: {
-                                        id: id,
-                                        title: title,
-                                        price: price,
-                                        img: img
-                                    }
-                                })
-                            }
-                        }}
-                    />
+                <ButtonEventComp
+                    action={`${itThisWithinCart ? "🗑": "🛒"}`}
+                    styles={`
+                        ${itThisWithinCart ? "bg-yume-secondary-muted" : "bg-yume-primary-muted"}
+                        text-2xl active:scale-95 p-1 rounded-full absolute top-2 right-2 shadow-sm shadow-yume-neutral-bold    
+                    `} 
+                    event={()=>{
+                        if(itThisWithinCart){
+                            dispatch?.({
+                                type: "remove", 
+                                value: {
+                                    id: id
+                                }
+                            })
+                        }else{
+                            dispatch?.({
+                                type: "add",
+                                value: {
+                                    id: id,
+                                    title: title,
+                                    price: price,
+                                    img: img
+                                }
+                            })
+                        }
+                    }}
+                />
             </div>
         </li>
     )
