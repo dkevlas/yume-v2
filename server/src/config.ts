@@ -23,7 +23,7 @@ export const config: Config = {
     MONGO_URI: getValuesENV('MONGO_URI', ''),
     URL_CLIENT: getValuesENV('URL_CLIENT', 'https://yume-v2-uvas-projects-7daf4bef.vercel.app/')
 }
-
+console.log(config.URL_CLIENT)
 if(!config.MONGO_URI){
     console.error('MONGO_URI is required');
     process.exit(1);
