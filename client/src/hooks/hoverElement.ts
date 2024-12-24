@@ -2,12 +2,10 @@ import { useState } from "react"
 
 export const useHoverElement = () => {
     const [ activeElement, setActiveElement ] = useState<boolean>(false)
-    const mouseEnter = (e: React.MouseEvent<HTMLElement>) => {
-        // e.currentTarget.style.backgroundColor = 'red'
+    const mouseEnter = () => {
         return setActiveElement(true)
     }
-    const mouseLeave = (e: React.MouseEvent<HTMLElement>) => {
-        // e.currentTarget.style.backgroundColor = 'transparent'
+    const mouseLeave = () => {
         return setActiveElement(false)
     }
     return { mouseEnter, mouseLeave, activeElement }
