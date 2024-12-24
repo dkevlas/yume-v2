@@ -21,7 +21,7 @@ export const config: Config = {
     PORT: parseInt(process.env.PORT || '3001' , 10),
     HOST: getValuesENV('HOST', '0.0.0.0'),
     MONGO_URI: getValuesENV('MONGO_URI', ''),
-    URL_CLIENT: getValuesENV('URL_CLIENT', 'urldefault.com')
+    URL_CLIENT: getValuesENV('URL_CLIENT', 'https://yume-v2-uvas-projects-7daf4bef.vercel.app/')
 }
 
 if(!config.MONGO_URI){
