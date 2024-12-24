@@ -19,7 +19,7 @@ const getValuesENV = (key: string, defaultValue: string) =>{
 }
 export const config: Config = {
     PORT: parseInt(process.env.PORT || '3001' , 10),
-    HOST: getValuesENV('HOST', 'localhost'),
+    HOST: getValuesENV('HOST', '0.0.0.0'),
     MONGO_URI: getValuesENV('MONGO_URI', ''),
     URL_CLIENT: getValuesENV('URL_CLIENT', 'urldefault.com')
 }
