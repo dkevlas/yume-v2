@@ -9,7 +9,7 @@ export default function SubtitleHomeComp({
         <div
             className={`
                 ${styles}
-                text-center border-b-4 py-2
+                text-center border-b-4 py-2 mb-16
                 border-b-yume-primary dark:border-b-yume-secondary
             `}
         >

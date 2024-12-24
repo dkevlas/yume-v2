@@ -5,7 +5,7 @@ export default function ListContainerComp({
 }: {children: React.ReactNode}){
     return (
         <section>
-            <ul className="grid pt-16 justify-items-center sm:grid-cols-2 lg:grid-cols-4 gap-4 py-6 px-8">
+            <ul className="grid pt-16 justify-items-center sm:grid-cols-2 lg:grid-cols-4 gap-8 py-6 px-8">
                 {children}
             </ul>
         </section>

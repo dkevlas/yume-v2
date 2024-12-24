@@ -12,7 +12,6 @@ export default function ContainerComp({
         <div
             className={`
                 ${styles}
-                p-4
             `}
         >
             {children}

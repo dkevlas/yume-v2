@@ -6,7 +6,7 @@ export default function ListProductsSectionComp(){
     const navigation = useNavigate()
     return (
         <ul className="
-            flex gap-4 flex-wrap justify-center py-4
+            flex gap-8 flex-wrap justify-center py-4
             md:grid md:grid-cols-4
         ">
             { productsRandoms && productsRandoms.data?.map((p, index) => (

@@ -12,7 +12,7 @@ export function ContentTextCardComp({
 }: ContentCardProps){
 
     return (
-        <div className="text-center pt-2">
+        <div className="text-center py-6 px-2">
             <h4 className="text-yume-primary dark:text-yume-secondary font-semibold text-[clamp(0.75rem,_0.625rem_+_0.5vw,_1rem)]">
                 {title}
             </h4>
