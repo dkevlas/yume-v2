@@ -6,7 +6,7 @@ import FooterTempalte from "./templates/FooterTemplate"
 import { CartProvider } from "./context/cartProvider"
 
 function App() {
-
+  console.log('URL SERVER: ', import.meta.env.VITE_URL_SERVER)
   return (
     <BrowserRouter> 
       <CartProvider>
