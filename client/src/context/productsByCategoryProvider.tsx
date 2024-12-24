@@ -3,8 +3,11 @@ import { productsByCategoryContext } from "./productsByCategoryContext"
 import { useLocation } from "react-router-dom"
 import { ResponseData } from "../interfaces/responseData.Interface"
 import { getProductsByCategory } from "../services/ProductsService"
+import { optionsCategory } from "../components/shopping/ValuesQuerys"
 
-const categoryValues = ['todo', 'anime', 'figuras', 'mangas'];
+const categoryValues = optionsCategory.map( category => {
+    return category.name
+})
 
 export const ProductsByCategoryProvider = ({children}: {children: React.ReactNode}) => {
     const location = useLocation()
