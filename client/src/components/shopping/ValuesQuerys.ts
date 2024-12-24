@@ -4,7 +4,8 @@ interface OptionsCategory {
 }
 export const optionsCategory: OptionsCategory[] = [
     { value: 'todo', name: 'Todo' },
-    { value: 'anime', name: 'Anime' },
-    { value: 'mangas', name: 'Mangas' },
-    { value: 'figuras', name: 'Figuras' }
+    { value: 'Anime', name: 'Anime' },
+    { value: 'Merch', name: 'Merch' },
+    { value: 'Cómics', name: 'Cómics' },
+    { value: 'Franquicias', name: 'Franquicias'}
 ]
