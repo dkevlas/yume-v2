@@ -19,5 +19,5 @@ app.use('/api/products-filters', routerProductsFilters)
 
 app.use(notFound)
 app.use(handlerError)
-
+console.log(config.URL_CLIENT)
 export default app 
