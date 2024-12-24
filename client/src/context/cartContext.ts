@@ -1,7 +1,7 @@
 import React, { createContext } from "react";
 
 export type Action = {
-    type: "add" | "remove" | "clearCart",
+    type: "add" | "remove" | "clearCart" | "decrement",
     value?: State
 }
 

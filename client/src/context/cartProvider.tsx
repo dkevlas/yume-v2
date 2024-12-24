@@ -30,6 +30,21 @@ const reducer = (state: State[], action: Action): State[] =>{
                 return cloneState
             }
         }
+        case "decrement": {
+            const newCart = state.map( p => {
+                if(p.id == value?.id && p.mount == 1){
+                    return p
+                } else if(p.id == value?.id){
+                    return {
+                        ...p,
+                        mount: p.mount ? p.mount - 1 : 1
+                    }
+                } else {
+                    return p
+                }
+            })
+            return newCart
+        }
         case "remove": {
             const newCart = state.filter( item => {
                 if(item.id !== value?.id){
@@ -54,7 +69,7 @@ export const CartProvider = ({
         const cart = localStorage.getItem('cart')
         return cart ? JSON.parse(cart) : valueInitial
     })
-    console.log(state)
+    
     const checkProductInCart = (id: string | undefined): boolean | undefined =>{
         const productFound = state?.some( p => p.id == id)
         return productFound ? true : false
