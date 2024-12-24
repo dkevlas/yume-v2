@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Suspense } from "react"
-import { HomePage, PrivatePage, ProductPage, ShoppingPage } from "./routes/Routes"
+import { CartPage, HomePage, PrivatePage, ProductPage, ShoppingPage } from "./routes/Routes"
 import MenuTemplate from "./templates/MenuTemplate"
 import FooterTempalte from "./templates/FooterTemplate"
 import { CartProvider } from "./context/cartProvider"
@@ -16,6 +16,7 @@ function App() {
                 <Route path="/*" element={<HomePage />} />
                 <Route path="/productos/*" element={<ShoppingPage />} />
                 <Route path="/producto/*" element={<ProductPage />} />
+                <Route path="/carrito/*" element={<CartPage />} />
                 <Route path="/yume/private/*" element={<PrivatePage />} />
               </Routes>
             <FooterTempalte />
