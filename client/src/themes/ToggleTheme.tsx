@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react"
 import { ChangeTheme, Theme } from "./ChangeTheme"
 import { SVGdark, SVGlight} from "./SVGicons"
-
-export default function ToggleTheme(){
+interface ToggleThemeProps {
+    styles?: string,
+    stylesSVG?: string
+}
+export default function ToggleTheme({
+    styles, stylesSVG
+}: ToggleThemeProps){
 
     const isTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
     const themeCurrent = localStorage.getItem('theme')
@@ -30,11 +35,15 @@ export default function ToggleTheme(){
         
     }, [theme])
     return (
-        <div className="flex relative w-full aspect-square">
+        <div className={`
+            ${styles}
+            flex items-center justify-items-center relative w-6 aspect-square
+        `}>
             <div
                 className={`
+                    ${stylesSVG}
                     ${showIcon ? 'opacity-100 z-[1]' : 'opacity-0 z-[-1]'}
-                    w-full h-full aspect-square rounded-full cursor-pointer transition-opacity top-0 left-0 absolute
+                    aspect-square rounded-full cursor-pointer transition-opacity
                 `}
                 onClick={()=>{
                     setTheme('light')
@@ -45,8 +54,9 @@ export default function ToggleTheme(){
             </div>
             <div
                 className={`
+                    ${stylesSVG}
                     ${showIcon ? 'opacity-0 z-[-1]' : 'opacity-100 z-[1]'}
-                    w-full h-full aspect-square rounded-full cursor-pointer transition-opacity top-0 left-0 absolute
+                    aspect-square rounded-full cursor-pointer transition-opacity
                 `}
                 onClick={()=>{
                     setTheme('dark')
