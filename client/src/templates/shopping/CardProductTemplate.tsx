@@ -24,7 +24,7 @@ export default function CardProductTemplate({
     return (
         <li
             className={`
-                max-w-[300px] w-full sm:max-w-none
+                max-w-[300px] w-full sm:max-w-none shadow-lg rounded-lg overflow-hidden
                 shadow-yume-primary dark:shadow-yume-secondary
                 outline outline-2 outline-yume-primary dark:outline-yume-secondary relative
             `}
