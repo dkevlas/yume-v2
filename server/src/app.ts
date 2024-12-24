@@ -8,10 +8,14 @@ import { handlerError } from "./middlewares/handlerError";
 
 const app = express()
 
-app.use(cors({
+const corsOptions = {
     origin: config.URL_CLIENT,
-    credentials: true
-}))
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'] 
+}
+app.use(cors(corsOptions))
+app.options("*", cors(corsOptions))
 app.use(json())
 
 app.use('/api/products', routerProducts)
