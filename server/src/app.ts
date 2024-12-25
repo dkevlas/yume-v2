@@ -1,4 +1,4 @@
-import express, { json, NextFunction, Response } from "express";
+import express, { json } from "express";
 import cors from "cors";
 import routerProducts from "./routes/product.routes";
 import routerProductsFilters from "./routes/productFilter.routes";
@@ -7,16 +7,13 @@ import { notFound } from "./middlewares/notFound";
 import { handlerError } from "./middlewares/handlerError";
 import morgan from "morgan"
 const app = express()
-app.use((_req, res: Response, next: NextFunction)=>{
-    res.set("Cache-control", "no-store")
-    next()
-});
+
 
 const corsOptions = {
     origin: config.URL_CLIENT,
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'] 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'] 
 }
 app.use(cors(corsOptions))
 app.options("*", cors(corsOptions))
