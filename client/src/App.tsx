@@ -5,7 +5,7 @@ import MenuTemplate from "./templates/MenuTemplate"
 import FooterTempalte from "./templates/FooterTemplate"
 import { CartProvider } from "./context/cartProvider"
 
-console.log(import.meta.env.VITE_URL_SERVER)
+console.log("app: ",import.meta.env.VITE_URL_SERVER)
 function App() {
   return (
     <BrowserRouter> 
