@@ -42,7 +42,7 @@ export default function PaymentDetailsComp(){
         <section className="mb-8 max-w-[450px] mx-auto">
             <div className="flex justify-between text-lg font-medium text-gray-800">
                 <span>Total de productos:</span>
-                <span>$${total.priceProducts?.toFixed(2)}</span>
+                <span>${total.priceProducts?.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-lg font-medium text-gray-800 mt-2">
                 <span>Envío:</span>

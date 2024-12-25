@@ -22,6 +22,11 @@ export default function ProductDetailsTemplate(){
                     console.log(err)
                 })
         }
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        })
     }, [productID])
     return (
         <div className="relative h-max min-h-[400px] py-8">

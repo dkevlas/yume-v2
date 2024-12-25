@@ -6,7 +6,7 @@ import { getProductsByCategory } from "../services/ProductsService"
 import { optionsCategory } from "../components/shopping/ValuesQuerys"
 
 const categoryValues = optionsCategory.map( category => {
-    return category.name
+    return category.value
 })
 
 export const ProductsByCategoryProvider = ({children}: {children: React.ReactNode}) => {
