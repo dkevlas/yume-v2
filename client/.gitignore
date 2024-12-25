@@ -26,3 +26,5 @@ dist-ssr
 #Files static
 public
 test
+mocks/
+.env

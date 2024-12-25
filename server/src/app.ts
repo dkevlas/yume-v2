@@ -5,7 +5,7 @@ import routerProductsFilters from "./routes/productFilter.routes";
 import { config } from "./config";
 import { notFound } from "./middlewares/notFound";
 import { handlerError } from "./middlewares/handlerError";
-
+import morgan from "morgan"
 const app = express()
 app.use((_req, res: Response, next: NextFunction)=>{
     res.set("Cache-control", "no-store")
@@ -21,6 +21,8 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.options("*", cors(corsOptions))
 app.use(json())
+
+app.use(morgan("dev"))
 
 app.use('/api/products', routerProducts)
 app.use('/api/products-filters', routerProductsFilters)
