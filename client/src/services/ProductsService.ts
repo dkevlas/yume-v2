@@ -5,7 +5,8 @@ const urlServer: string = import.meta.env.VITE_URL_SERVER
 
 const apiAxios: AxiosInstance = axios.create({
     baseURL: urlServer,
-    withCredentials: true
+    withCredentials: true,
+    headers: {"Cache-Control": "no-cache"}
 })
 
 export const getProductsRandoms = async () => {
