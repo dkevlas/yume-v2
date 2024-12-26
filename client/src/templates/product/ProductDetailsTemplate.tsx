@@ -2,10 +2,9 @@ import { useEffect, useState } from "react"
 import { Params, useParams } from "react-router-dom"
 import { getProduct } from "../../services/ProductsService"
 import { ResponseData, TypeData } from "../../interfaces/responseData.Interface"
-
-import NotFound from "../../pages/NotFound"
 import SliderImagesTemplate from "./SliderImagesTemplate"
 import { useCart } from "../../hooks/cartHook"
+import ProductNotFound from "../../components/product/ProductNotFount"
 
 export default function ProductDetailsTemplate(){
     const { productID }:  Readonly<Params<string>> = useParams()
@@ -31,7 +30,7 @@ export default function ProductDetailsTemplate(){
     return (
         <div className="relative h-max min-h-[400px] py-8">
             {
-                product?.success == false ? <NotFound /> :
+                product?.success == false ? <ProductNotFound /> :
                 <SliderImagesTemplate
                     title={data?.title}
                     description={data?.description}

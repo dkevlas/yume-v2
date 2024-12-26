@@ -1,6 +1,6 @@
-import ContainerComp from "../../components/home/ContainerComp";
 import ListProductsSectionComp from "../../components/home/ListProductsSectionComp";
 import SubtitleHomeComp from "../../components/home/SubtitleHomeComp";
+import Layout from "../../Layout";
 
 interface SectionProductsProps{
     subtitle?: string,
@@ -11,11 +11,9 @@ export default function SectionProductsTemplate({
     subtitle, styles
 }: SectionProductsProps){
     return (
-        <section className={`${styles}`} >
-            <ContainerComp>
-                <SubtitleHomeComp subtitle={subtitle ? subtitle : ""} />
-                <ListProductsSectionComp />
-            </ContainerComp>
-        </section>
+        <Layout as={"section"} className={`${styles} min-w-[280px]`} >
+            <SubtitleHomeComp subtitle={subtitle ? subtitle : ""} />
+            <ListProductsSectionComp />
+        </Layout>
     )
 }

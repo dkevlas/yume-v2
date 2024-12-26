@@ -14,12 +14,12 @@ export default function ShoppingPage(){
         )
     }
     return (
-        <div className="relative" >
+        <>
             { 
                 data?.success === false ? 
                 <NotFound /> : 
                 <ProductFilterTemplate />
             }
-        </div>
+        </>
     )
 }

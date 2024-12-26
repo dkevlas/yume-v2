@@ -3,17 +3,18 @@ import ListProductsSelectedComp from "../../components/cart/ListProductSelectedC
 import PaymentDetailsComp from "../../components/cart/PaymentDetailsComp"
 import ButtonEventComp from "../../components/others/ButtonEventComp"
 import { useCart } from "../../hooks/cartHook"
+import Layout from "../../Layout"
 import SectionProductsTemplate from "../home/SectionProductsTemplate"
 
 export default function CartTemplate(){
     const { state, dispatch } = useCart()
     return (
-        <div className="flex flex-col">
+        <Layout as={"aside"} className="flex flex-col justify-center min-w-[280px]:">
             <CartHeaderComp 
                 title="¡Tu carrito está listo para comprar!"
                 description="Revisa los productos que has añadido y procede al pago cuando estés listo."
             />
-            <div className="space-y-6 grid max-w-[500px] mx-auto">
+            <div className="space-y-6 grid max-w-[500px] mx-auto mb-8">
                 { state?.map( (item, index)=> (
                     <ListProductsSelectedComp 
                         key={index}
@@ -33,7 +34,7 @@ export default function CartTemplate(){
             />
             <ButtonsCTAComp />
             <PaymentBenefitsComp />
-            <SectionProductsTemplate subtitle="Productos Relacionados" styles="mt-16" />
-        </div>
+            <SectionProductsTemplate subtitle="Te puede interesar" styles="mt-16 w-full" />
+        </Layout>
     )
 }

@@ -2,6 +2,7 @@ import BenefitComp from "../../components/home/BenefitComp";
 import ContainerComp from "../../components/home/ContainerComp";
 import { BenefitClient, BenefitSend, BenefitWarranty } from "../../components/icos/IcosBenefitComp";
 import { BenefitProps } from "../../interfaces/home/BenefitPropsInterface";
+import Layout from "../../Layout";
 
 export default function InfoServicesTemplate(){
     const allServicesBenefit: BenefitProps[] = [
@@ -22,13 +23,9 @@ export default function InfoServicesTemplate(){
         }
     ]
     return (
-        <section>
-            <ContainerComp
-                styles="flex justify-center"
-            >
-                <ul
-                    className="flex flex-col gap-4 md:flex-row md:flex-wrap justify-center"
-                >
+        <Layout as={"section"} className="py-8">
+            <ContainerComp styles="flex justify-center" >
+                <ul className="flex flex-col gap-4 md:flex-row md:flex-wrap justify-center">
                     {allServicesBenefit.map( (item, index) => (
                         <BenefitComp 
                             key={index}
@@ -39,6 +36,6 @@ export default function InfoServicesTemplate(){
                     ))}
                 </ul>
             </ContainerComp>
-        </section>
+        </Layout>
     )
 }
