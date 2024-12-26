@@ -44,8 +44,8 @@ export function CartEmpty(){
 export function ButtonsCTAComp(){
     return (
         <div className="flex space-x-4 justify-center mb-8">
-            <a href="/checkout" className="w-48 py-3 px-4 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition duration-300">Finalizar compra</a>
-            <Link to="/productos?categoria=todo&pagina=1" className="w-48 py-3 px-4 bg-gray-300 text-gray-700 text-center rounded-lg hover:bg-gray-400 transition duration-300">Seguir comprando</Link>
+            <Link to="/productos?categoria=todo&pagina=1" className="w-48 py-3 px-4 bg-yume-neutral text-yume-deep text-center rounded-lg hover:bg-yume-neutral-muted transition duration-300">Finalizar compra</Link>
+            <Link to="/productos?categoria=todo&pagina=1" className="w-48 py-3 px-4 bg-yume-deep-muted text-yume-neutral text-center rounded-lg hover:bg-yume-deep transition duration-300">Seguir comprando</Link>
         </div>
     )
 }

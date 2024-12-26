@@ -6,7 +6,7 @@ export default function ListProductsSectionComp(){
     const navigation = useNavigate()
     return (
         <ul className="
-            flex gap-8 flex-wrap justify-center py-4
+            flex gap-8 flex-wrap justify-center
             md:grid md:grid-cols-4
         ">
             { productsRandoms && productsRandoms.data?.map((p, index) => (
@@ -19,9 +19,7 @@ export default function ListProductsSectionComp(){
                     "
                 >
                     <div
-                        className="
-                            absolute overflow-hidden w-[90%] h-[90%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                        "
+                        className=" absolute overflow-hidden w-[90%] h-[90%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     >
                         
                         <img 

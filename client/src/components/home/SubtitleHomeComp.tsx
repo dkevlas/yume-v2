@@ -6,19 +6,8 @@ export default function SubtitleHomeComp({
     subtitle, styles
 }: SubtitleHomeProps){
     return (
-        <div
-            className={`
-                ${styles}
-                text-center border-b-4 py-2 mb-16
-                border-b-yume-primary dark:border-b-yume-secondary
-            `}
-        >
-            <h2
-                className="
-                    text-4xl font-semibold
-                    text-yume-primary dark:text-yume-secondary
-                "
-            >
+        <div className={`${styles} text-center border-b-4 py-2 mb-16 border-b-yume-primary dark:border-b-yume-secondary`} >
+            <h2 className=" text-3xl font-semibold text-yume-primary dark:text-yume-secondary">
                 {subtitle}
             </h2>
         </div>

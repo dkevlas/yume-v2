@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Layout from "../../Layout";
 
 export default function WelcomeComp(){
     return (
-        <header className="flex flex-col md:flex-row items-center justify-between p-6 md:p-8">
+        <Layout as={"header"} className="flex flex-col md:flex-row items-center justify-between p-6 md:p-8">
             <div className="flex-1 text-center mb-6 md:mb-0">
                 <img src="https://media.revistavanityfair.es/photos/673487be16a9f1dbcb33759c/master/w_3940%2Cc_limit/VF1224-VF-Hollywood-Portfolio-13.jpg" alt="Imagen Anime" className="max-w-full h-auto mx-auto max-h-[450px]"/>
             </div>
@@ -15,6 +16,6 @@ export default function WelcomeComp(){
                     </Link>
                 </div>
             </div>
-        </header>
+        </Layout>
     )
 }
