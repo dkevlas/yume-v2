@@ -21,10 +21,14 @@ app.use(json())
 
 app.use(morgan("dev"))
 
+app.head('/ping', (_req, res) => {
+    res.status(200).send(); // Responde con un 200 OK, pero sin cuerpo para evitar la hibernación en Render
+});
+
 app.use('/api/products', routerProducts)
 app.use('/api/products-filters', routerProductsFilters)
 
 app.use(notFound)
 app.use(handlerError)
-console.log("app: ",config.URL_CLIENT)
+
 export default app 
