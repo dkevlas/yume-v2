@@ -21,7 +21,7 @@ export default function ContactComp(){
                 </div>
                 <button type="submit" onClick={(e)=> {
                     e.preventDefault()
-                }} className="w-full bg-yume-primary dark:bg-yume-secondary text-white py-3 px-6 rounded-lg text-lg transition duration-300 hover:bg-orange-600">
+                }} className="w-full bg-yume-primary dark:bg-yume-secondary text-white py-3 px-6 rounded-lg text-lg transition duration-300">
                     Enviar Mensaje
                 </button>
                 </form>

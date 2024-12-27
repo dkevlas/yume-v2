@@ -1,4 +1,3 @@
-import SectionProductsTemplate from "../../templates/home/SectionProductsTemplate";
 import { CartEmpty, CartHeaderComp, PaymentBenefitsComp } from "./CartComponents";
 
 export default function NoProductComp(){
@@ -10,7 +9,6 @@ export default function NoProductComp(){
             />
             <CartEmpty />
             <PaymentBenefitsComp />
-            <SectionProductsTemplate />
         </div>
     )
 }

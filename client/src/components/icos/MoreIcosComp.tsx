@@ -36,3 +36,11 @@ export function IcoCartComp({
         </ContainerComp>
     )
 }
+
+export function IcoCartEmpty(){
+    return (
+        <ContainerComp styles="w-42">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-full" viewBox="0 0 64 64"> <circle cx="16" cy="48" r="6" fill="#333" /> <circle cx="48" cy="48" r="6" fill="#333" /> <path d="M12 12 L16 12 L18 36 L46 36 L48 12 L12 12" fill="none" stroke="#333" stroke-width="2"/> <path d="M18 36 L46 36" fill="none" stroke="#333" stroke-width="2"/> <path d="M12 12 L10 6" fill="none" stroke="#333" stroke-width="2"/> <path d="M48 12 L50 6" fill="none" stroke="#333" stroke-width="2"/> <path d="M20 36 L20 42 L44 42 L44 36" fill="none" stroke="#333" stroke-width="2"/> <path d="M20 42 L44 42" fill="none" stroke="#333" stroke-width="2"/> </svg>
+        </ContainerComp>
+    )
+}

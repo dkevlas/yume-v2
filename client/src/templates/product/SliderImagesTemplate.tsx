@@ -32,56 +32,59 @@ export default function SliderImagesTemplate({
         return <LoadingComp />
     } else {
         return (
-            <section className="mt-2 px-4 w-full max-h-full flex flex-col md:flex-row gap-4 items-center md:justify-center md:items-start">
-                <ContentProductComp 
-                    title={title}
-                    description={description}
-                    price={price}
-                    children={
-                        <ButtonEventComp 
-                            styles={`${isCheck ? "outline-yume-secondary" : "outline-yume-primary"} outline outline-2 rounded-sm font-semibold py-1 px-3 text-[clamp(1rem,_0.821rem_+_0.476vw,_1.25rem)]`}                            
-                            action={`${isCheck ? "Quitar del Carrito 🗑" : "Agregar al carrito 🛒"}`}
-                            event={()=>{
-                                if(isCheck){
-                                    dispatch?.({
-                                        type: "remove",
-                                        value: {
-                                            id: id
-                                        }})
-                                } else {
-                                    dispatch?.({
-                                        type: "add",
-                                        value: {
-                                            id: id,
-                                            title: title,
-                                            price: price,
-                                            img: img
-                                        }
-                                    })
-                                }
-                            }}
-                        />
-                    }
-                />
-                <div className="relative w-[90%] max-w-[400px] aspect-square shadow-lg shadow-yume-primary dark:shadow-yume-secondary snap-mandatory snap-x overflow-x-auto">
-                    <div ref={refSlider} className={`h-full absolute flex`}>
-                        { images?.map((item, index)=> (
-                            <div key={index} className="w-full snap-center">
-                                <img 
-                                    src={item}
-                                    alt={`${title} - ${index + 1}`}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        ))}
+            <>
+                <section className="grid sm:grid-cols-2 gap-4 justify-items-center">
+                    <ContentProductComp 
+                        styles="w-full max-w-[400px] sm:ml-auto"
+                        title={title}
+                        description={description}
+                        price={price}
+                        children={
+                            <ButtonEventComp 
+                                styles={`${isCheck ? "outline-yume-secondary" : "outline-yume-primary"} outline outline-2 rounded-sm font-semibold py-1 px-3 text-[clamp(1rem,_0.821rem_+_0.476vw,_1.25rem)]`}                            
+                                action={`${isCheck ? "Quitar del Carrito 🗑" : "Agregar al carrito 🛒"}`}
+                                event={()=>{
+                                    if(isCheck){
+                                        dispatch?.({
+                                            type: "remove",
+                                            value: {
+                                                id: id
+                                            }})
+                                    } else {
+                                        dispatch?.({
+                                            type: "add",
+                                            value: {
+                                                id: id,
+                                                title: title,
+                                                price: price,
+                                                img: img
+                                            }
+                                        })
+                                    }
+                                }}
+                            />
+                        }
+                    />
+                    <div className="relative w-full max-w-[400px] sm:mr-auto aspect-square shadow-lg shadow-yume-primary dark:shadow-yume-secondary snap-mandatory snap-x overflow-x-auto">
+                        <div ref={refSlider} className={`h-full absolute flex `}>
+                            { images?.map((item, index)=> (
+                                <div key={index} className="w-full snap-center">
+                                    <img 
+                                        src={item}
+                                        alt={`${title} - ${index + 1}`}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                </section>
                 <ButtonEventComp
                     action={<IcoBackComp />}
                     event={()=> navigate(-1)}
                     styles="absolute max-w top-2 left-2 bg-yume-neutral-bold rounded-md dark:bg-yume-deep"
                 />
-            </section>
+            </>
         )
     }
 }

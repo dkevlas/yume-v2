@@ -4,7 +4,6 @@ import PaymentDetailsComp from "../../components/cart/PaymentDetailsComp"
 import ButtonEventComp from "../../components/others/ButtonEventComp"
 import { useCart } from "../../hooks/cartHook"
 import Layout from "../../Layout"
-import SectionProductsTemplate from "../home/SectionProductsTemplate"
 
 export default function CartTemplate(){
     const { state, dispatch } = useCart()
@@ -34,7 +33,6 @@ export default function CartTemplate(){
             />
             <ButtonsCTAComp />
             <PaymentBenefitsComp />
-            <SectionProductsTemplate subtitle="Te puede interesar" styles="mt-16 w-full" />
         </Layout>
     )
 }

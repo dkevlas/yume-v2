@@ -28,7 +28,7 @@ export default function ProductDetailsTemplate(){
         })
     }, [productID])
     return (
-        <div className="relative h-max min-h-[400px] py-8">
+        <div className="relative py-8"> 
             {
                 product?.success == false ? <ProductNotFound /> :
                 <SliderImagesTemplate

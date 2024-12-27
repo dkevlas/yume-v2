@@ -4,12 +4,13 @@ import { CartPage, HomePage, PrivatePage, ProductPage, ShoppingPage } from "./ro
 import MenuTemplate from "./templates/MenuTemplate"
 import FooterTempalte from "./templates/FooterTemplate"
 import { CartProvider } from "./context/cartProvider"
+import LoadingComp from "./components/others/LoadingComp"
 
 function App() {
   return (
     <BrowserRouter> 
       <CartProvider>
-        <Suspense fallback={<h1 className="text-4xl text-green-500">LISA BAILANDO</h1>}>
+        <Suspense fallback={<LoadingComp />}>
             <MenuTemplate />
               <Routes>
                 <Route path="/*" element={<HomePage />} />

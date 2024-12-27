@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { IcoCartEmpty } from "../icos/MoreIcosComp"
 
 interface CartComponentsProps{
     title?: string,
@@ -36,7 +37,7 @@ export function CartHeaderComp({
 export function CartEmpty(){
     return (
         <div className="flex justify-center mb-6">
-            <img src="https://images7.memedroid.com/images/UPLOADED993/62f16a8e87623.jpeg" alt="Carrito vacío" className="w-40 h-40 object-contain" />
+            <IcoCartEmpty />
         </div>
     )
 }

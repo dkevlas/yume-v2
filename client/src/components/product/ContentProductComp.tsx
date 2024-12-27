@@ -15,7 +15,7 @@ export default function ContentProductComp({
     return (
         <div className={`
             ${styles}
-            text-center md:text-start md:mt-4
+            text-center sm:text-start flex flex-col gap-4
         `}>
             <h3
                 className="font-bold text-yume-primary dark:text-yume-secondary text-[clamp(1rem,_0.813rem_+_0.75vw,_1.375rem)]"
@@ -27,7 +27,7 @@ export default function ContentProductComp({
             >
                 {description}
             </p>
-            <div className="py-4 flex justify-between items-center md:w-[90%]">
+            <div className="py-4 flex justify-around gap-4 items-center md:w-[90%]">
                 <span className="font-semibold text-[clamp(1rem,_0.821rem_+_0.476vw,_1.25rem)]">💲{price?.toFixed(2)}</span>
                 { children }
             </div>
