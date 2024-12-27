@@ -4,9 +4,9 @@ import { config } from "./config"
 export async function ConnectDB() {
     try{ 
         await mongoose.connect(config.MONGO_URI)
-        console.log('Conexión a la base de datos exitosa')
+        console.log('Conection DB successful')
     } catch(err: unknown){
-        console.log('Lisa no puede cantar DB')
+        console.log('Connection DB failed')
         console.log(err)
     }
 }
